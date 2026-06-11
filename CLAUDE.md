@@ -4,9 +4,11 @@ React 19 + Vite 8 + TypeScript 6 (strict). ES modules. React Compiler enabled (d
 
 ## Commands
 
-- `npm run dev` — dev server
-- `npm run build` — type-check (`tsc -b`) + build
-- `npm run lint` — ESLint
+Package manager is **pnpm** (npm fails with this lockfile).
+
+- `pnpm dev` — dev server
+- `pnpm build` — type-check (`tsc -b`) + build
+- `pnpm lint` — ESLint
 
 ## Structure
 
@@ -20,7 +22,7 @@ React 19 + Vite 8 + TypeScript 6 (strict). ES modules. React Compiler enabled (d
 ## Conventions
 
 - Functional components with typed props; default export per component file.
-- Styling: plain CSS with theme variables (`--text`, `--bg`, `--accent`) supporting light/dark mode.
+- Styling: Tailwind CSS v4. Semantic color tokens (`bg-surface`, `bg-card`, `text-body`, `text-heading`, `border-line`, `primary`, `secondary` + `-soft`/`-deep` variants) defined in `src/index.css` (`@theme inline`) and mirrored in `src/theme/theme.ts` (light/dark, `applyTheme()`). Do not hardcode colors in components.
 - Shared types live in `src/interfaces`; feature-only types stay in the feature module.
 - Use `@/` imports, not relative `../../` chains.
 

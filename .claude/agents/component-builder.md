@@ -14,7 +14,7 @@ Placement:
 Component rules:
 - Functional component, typed `Props` interface, default export, one component per file.
 - No manual memoization — React Compiler is enabled.
-- Styles: plain CSS file next to the component, using existing theme variables (`--text`, `--bg`, `--accent`) so light/dark mode works.
+- Styles: Tailwind v4 utility classes with the semantic tokens from `src/index.css` (`bg-surface`, `bg-card`, `text-body`, `text-heading`, `border-line`, `primary`/`secondary` + `-soft`/`-deep`). No separate CSS files, no hardcoded colors.
 - Import with `@/`, never long relative chains.
 
 Check existing components and `src/interfaces/` first to reuse types and patterns. Reply with the file paths created/changed and a one-line note each.

@@ -1,46 +1,49 @@
-// Centralized color palettes. index.css defines the same CSS variables as the
-// no-JS default (following the system preference via prefers-color-scheme);
-// applyTheme() overrides them at runtime for an explicit user choice.
+// Centralized color palettes — warm & friendly: pale orange + terracotta on cream.
+// index.css defines the same CSS variables as the no-JS default (following the
+// system preference via prefers-color-scheme); applyTheme() overrides them at
+// runtime for an explicit user choice. Tailwind utilities (bg-surface,
+// text-primary-deep, ...) read these variables through @theme inline.
 
 export interface ThemePalette {
-  text: string
-  textHeading: string
-  bg: string
-  border: string
-  codeBg: string
-  accent: string
-  accentBg: string
-  accentBorder: string
-  socialBg: string
-  shadow: string
+  surface: string
+  card: string
+  body: string
+  heading: string
+  line: string
+  primary: string
+  primarySoft: string
+  primaryDeep: string
+  secondary: string
+  secondarySoft: string
+  secondaryDeep: string
 }
 
 export const lightTheme: ThemePalette = {
-  text: '#6b6375',
-  textHeading: '#08060d',
-  bg: '#fff',
-  border: '#e5e4e7',
-  codeBg: '#f4f3ec',
-  accent: '#aa3bff',
-  accentBg: 'rgba(170, 59, 255, 0.1)',
-  accentBorder: 'rgba(170, 59, 255, 0.5)',
-  socialBg: 'rgba(244, 243, 236, 0.5)',
-  shadow:
-    'rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px',
+  surface: '#fff8f0',
+  card: '#fffdfa',
+  body: '#8a7866',
+  heading: '#43302b',
+  line: '#f3e3d3',
+  primary: '#fb923c',
+  primarySoft: '#ffedd5',
+  primaryDeep: '#c2410c',
+  secondary: '#e2725b',
+  secondarySoft: '#fbe2db',
+  secondaryDeep: '#b3402a',
 }
 
 export const darkTheme: ThemePalette = {
-  text: '#9ca3af',
-  textHeading: '#f3f4f6',
-  bg: '#16171d',
-  border: '#2e303a',
-  codeBg: '#1f2028',
-  accent: '#c084fc',
-  accentBg: 'rgba(192, 132, 252, 0.15)',
-  accentBorder: 'rgba(192, 132, 252, 0.5)',
-  socialBg: 'rgba(47, 48, 58, 0.5)',
-  shadow:
-    'rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px',
+  surface: '#221a14',
+  card: '#2b211a',
+  body: '#c4b3a3',
+  heading: '#f8ede2',
+  line: '#463528',
+  primary: '#fdba74',
+  primarySoft: 'rgba(253, 186, 116, 0.15)',
+  primaryDeep: '#fdba74',
+  secondary: '#f0937c',
+  secondarySoft: 'rgba(240, 147, 124, 0.15)',
+  secondaryDeep: '#f0937c',
 }
 
 export type ThemeName = 'light' | 'dark'
@@ -51,16 +54,17 @@ export const themes: Record<ThemeName, ThemePalette> = {
 }
 
 const cssVarByToken: Record<keyof ThemePalette, string> = {
-  text: '--text',
-  textHeading: '--text-h',
-  bg: '--bg',
-  border: '--border',
-  codeBg: '--code-bg',
-  accent: '--accent',
-  accentBg: '--accent-bg',
-  accentBorder: '--accent-border',
-  socialBg: '--social-bg',
-  shadow: '--shadow',
+  surface: '--surface',
+  card: '--card',
+  body: '--body',
+  heading: '--heading',
+  line: '--line',
+  primary: '--primary',
+  primarySoft: '--primary-soft',
+  primaryDeep: '--primary-deep',
+  secondary: '--secondary',
+  secondarySoft: '--secondary-soft',
+  secondaryDeep: '--secondary-deep',
 }
 
 export function applyTheme(name: ThemeName): void {

@@ -1,5 +1,4 @@
 import type { ReactNode } from 'react'
-import './Header.css'
 
 interface Props {
   title: string
@@ -8,9 +7,9 @@ interface Props {
 
 export default function Header({ title, rightSlot }: Props) {
   return (
-    <header className="header">
-      <span className="header-title">{title}</span>
-      <div className="header-right">{rightSlot}</div>
+    <header className="sticky top-0 z-10 flex items-center justify-between border-b border-line bg-surface px-6 py-3.5">
+      <span className="text-xl font-semibold text-heading">{title}</span>
+      <div>{rightSlot}</div>
     </header>
   )
 }

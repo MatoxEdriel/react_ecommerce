@@ -28,5 +28,16 @@ Notable changes to this project. Newest entries first under `[Unreleased]`.
 - dataContext.tsx: exported DataContexProvider for external use.
 - App.tsx: refactored to use Header, ProductGrid, LoginMenu components and useProducts hook.
 - App.css: added catalog and catalog-error styles.
+- Migrated styling from plain CSS files to Tailwind CSS v4 utilities across all components.
+- Color palette redesigned with semantic tokens (surface, card, body, heading, line) and warm primary/secondary (orange, terracotta).
+- index.css: replaced custom CSS variables with Tailwind @import and theme definitions using new semantic tokens.
+- component-builder agent: updated to require Tailwind v4 semantic tokens instead of plain CSS files.
+- CLAUDE.md: documented pnpm as package manager and Tailwind v4 as styling framework.
+- vite.config.ts: added @tailwindcss/vite plugin.
+- theme.ts: palette refactored from generic colors to semantic surface/body/heading/line with primary/secondary variants.
+
+### Deleted
+
+- App.css, Header.css, ProductGrid.css, LoginMenu.css: consolidated into Tailwind utility classes.
 
 ### Fixed
