@@ -1,0 +1,22 @@
+#!/bin/sh
+# Auto-update CHANGE.md with haiku before every commit.
+# Skip with: SKIP_CHANGELOG=1 git commit ...
+
+[ "$SKIP_CHANGELOG" = "1" ] && exit 0
+
+# Skip if nothing is staged besides CHANGE.md itself (avoids loops and empty runs)
+STAGED=$(git diff --cached --name-only | grep -v '^CHANGE\.md$')
+[ -z "$STAGED" ] && exit 0
+
+echo "[changelog] updating CHANGE.md with haiku..."
+claude -p "Run 'git diff --cached' to see the staged changes, then add concise one-line entries for them under '## [Unreleased]' in CHANGE.md (subsections Added/Changed/Fixed). Skip entries already listed. Edit only CHANGE.md." \
+  --model haiku \
+  --allowedTools "Read,Edit,Bash(git diff*)" \
+  --permission-mode acceptEdits \
+  > /dev/null 2>&1
+
+# Stage whatever haiku wrote so it goes into this same commit
+git add CHANGE.md 2>/dev/null
+
+# Never block the commit, even if claude failed
+exit 0

@@ -26,5 +26,5 @@ React 19 + Vite 8 + TypeScript 6 (strict). ES modules. React Compiler enabled (d
 
 ## Workflow
 
-- After completing a significant change, record it in `CHANGE.md` (use the `changelog` agent).
+- CHANGE.md is updated automatically by a git pre-commit hook (`.githooks/pre-commit`, runs haiku). On a fresh clone, enable it once with `git config core.hooksPath .githooks`. Bypass with `SKIP_CHANGELOG=1`. For manual/mid-session entries, use the `changelog` agent.
 - Agent registry: see `AGENTS.md`. When agents in `.claude/agents/` change, sync it with the `agent-mapper` agent.
