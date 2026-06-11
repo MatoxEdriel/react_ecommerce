@@ -9,9 +9,9 @@ Map of the project's agents in `.claude/agents/`. Kept in sync by the `agent-map
 | agent-mapper | haiku | Read, Glob, Edit | Sync this table after agents change |
 | architecture | inherit | Read, Glob, Grep | Decide where code belongs; review structure (read-only) |
 | changelog | haiku | Read, Edit, Bash | Record completed changes in CHANGE.md |
-| component-builder | inherit | Read, Glob, Grep, Write, Edit | Create/modify React components and styles |
+| component-builder | sonnet | Read, Glob, Grep, Write, Edit | Create/modify React components and styles |
 | context | haiku | Read, Glob, Grep | Quick read-only summaries of project state/structure |
-| service-hook-builder | inherit | Read, Glob, Grep, Write, Edit | Create/modify services and custom hooks |
+| service-hook-builder | sonnet | Read, Glob, Grep, Write, Edit | Create/modify services and custom hooks |
 | software-design | inherit | Read, Glob, Grep | Design TS types, contracts, patterns (read-only) |
 
 ## Creating a new agent

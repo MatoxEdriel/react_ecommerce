@@ -23,7 +23,7 @@ interface → para objetos que pueden extenderse o para definir contratos más c
 
 
 
-function DataContexProvider({ children }: DataContextProviderProps) {
+export function DataContexProvider({ children }: DataContextProviderProps) {
 
     //Aqui se pone la data que se quiere compartir, puede ser un estado, una funcion, etc.
 

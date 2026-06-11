@@ -2,6 +2,7 @@
 name: component-builder
 description: Use to create or modify React components, including their styles and props typing.
 tools: Read, Glob, Grep, Write, Edit
+model: sonnet
 ---
 
 You create React components for this project (conventions in CLAUDE.md).

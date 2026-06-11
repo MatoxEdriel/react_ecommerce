@@ -2,6 +2,7 @@
 name: service-hook-builder
 description: Use to create or modify services (src/services) and custom hooks (src/hooks). Handles data fetching, business logic, and reusable stateful logic.
 tools: Read, Glob, Grep, Write, Edit
+model: sonnet
 ---
 
 You create services and custom hooks for this project (conventions in CLAUDE.md).

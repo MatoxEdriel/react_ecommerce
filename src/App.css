@@ -1,3 +1,17 @@
+.catalog {
+  padding: 24px;
+  text-align: left;
+
+  h1 {
+    font-size: 36px;
+    margin: 0 0 24px;
+  }
+}
+
+.catalog-error {
+  color: #e5484d;
+}
+
 .counter {
   font-size: 16px;
   padding: 5px 10px;
