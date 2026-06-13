@@ -19,6 +19,18 @@ Notable changes to this project. Newest entries first under `[Unreleased]`.
 - productService: mock product data and getProducts() function (replace with real API).
 - authService: mock login implementation (replace with real API).
 - theme.ts: light/dark theme palette system with applyTheme() and resetTheme() functions.
+- react-router-dom: v7.17.0 for client-side routing.
+- AppRoutes component: main routing configuration with protected routes for authenticated pages.
+- AppLayout component: wrapper with Navbar and main content outlet.
+- ProtectedRoute component: guards product detail page, redirects unauthenticated users to login.
+- LoginPage: full-page login form with redirect to referring page after auth.
+- ProductListPage: product list with loading/error states and grid display.
+- ProductDetailPage: product detail view with emoji, name, description, and price.
+- Navbar component: sticky navigation with Greenfield Store branding and auth state display.
+- useProduct hook: fetch single product by ID with loading and error states.
+- AuthProvider context: manages user authentication state with localStorage persistence.
+- authContext: useAuth hook for accessing authentication state and methods.
+- getProductById service function: fetch individual product by ID from mock data.
 
 ### Changed
 
@@ -35,9 +47,16 @@ Notable changes to this project. Newest entries first under `[Unreleased]`.
 - CLAUDE.md: documented pnpm as package manager and Tailwind v4 as styling framework.
 - vite.config.ts: added @tailwindcss/vite plugin.
 - theme.ts: palette refactored from generic colors to semantic surface/body/heading/line with primary/secondary variants.
+- App.tsx: simplified to render AppRoutes only; routing now handled by react-router-dom.
+- main.tsx: wrapped with BrowserRouter and AuthProvider for routing and authentication context.
+- ProductGrid.tsx: wrapped products in Links to route to product detail pages.
+- productService.ts: removed hardcoded MOCK_PRODUCTS; getProducts() now returns empty array (ready for real API).
 
 ### Deleted
 
 - App.css, Header.css, ProductGrid.css, LoginMenu.css: consolidated into Tailwind utility classes.
+- Header.tsx: replaced by Navbar component with routing integration.
+- LoginMenu.tsx: replaced by LoginPage component with dedicated route.
+- useLogin.ts: replaced by AuthProvider context with localStorage persistence.
 
 ### Fixed
