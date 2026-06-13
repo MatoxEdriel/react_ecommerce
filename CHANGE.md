@@ -31,6 +31,9 @@ Notable changes to this project. Newest entries first under `[Unreleased]`.
 - AuthProvider context: manages user authentication state with localStorage persistence.
 - authContext: useAuth hook for accessing authentication state and methods.
 - getProductById service function: fetch individual product by ID from mock data.
+- Motion primitives: warm-rise and warm-float keyframes for smooth entrance and floating animations.
+- Field component: reusable form input with icon, label, and staggered animation support.
+- Inline icons: MailIcon, LockIcon, SparkIcon, Spinner components for UI elements (currentColor).
 
 ### Changed
 
@@ -51,6 +54,8 @@ Notable changes to this project. Newest entries first under `[Unreleased]`.
 - main.tsx: wrapped with BrowserRouter and AuthProvider for routing and authentication context.
 - ProductGrid.tsx: wrapped products in Links to route to product detail pages.
 - productService.ts: removed hardcoded MOCK_PRODUCTS; getProducts() now returns empty array (ready for real API).
+- LoginPage: redesigned with warm soft-UI aesthetic, decorative side panel, staggered entrance animations, and modern form layout.
+- index.css: added reduced-motion media query for accessibility support.
 
 ### Deleted
 
